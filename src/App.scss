@@ -1,9 +1,12 @@
 $base-color: #9d95e8;
+$base-color-2: #c4c0eb;
 $text-color: #fcfcf0;
 
 body{
-    background-color: $base-color;
+    background: linear-gradient($base-color-2 0%, $base-color 100%);
+    // background-repeat: no-repeat;
     color: $text-color;
+    min-height: 100vh;
     margin: 16px;
 }
 
