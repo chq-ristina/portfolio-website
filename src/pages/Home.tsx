@@ -2,6 +2,8 @@ import { useState } from "react";
 import headshot from "../assets/headshot.jpg";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { MdKeyboardArrowUp } from "react-icons/md";
+import { AiFillLinkedin } from "react-icons/ai";
+import { AiOutlineGithub } from "react-icons/ai";
 
 export function Home() {
   const [collapse, setCollapsed] = useState(true);
@@ -12,6 +14,19 @@ export function Home() {
       </div>
       <div className="d-flex flex-column justify-content-center align-items-center mb-4">
         <h2>Christina Phillips</h2>
+        <div>
+          <h3>
+            <a
+              href="https://www.linkedin.com/in/christina-p-455763141/"
+              className="me-4"
+            >
+              <AiFillLinkedin />
+            </a>
+            <a href="https://github.com/chq-ristina">
+              <AiOutlineGithub />
+            </a>
+          </h3>
+        </div>
         <span className="text-center text-wrap mx-6">
           I'm a fullstack developer based out of NYC with 1 YOE. I have
           experience using C# and .NET Core for backend development and React,
@@ -28,15 +43,18 @@ export function Home() {
           aria-expanded="false"
           aria-controls="collapseExample"
           onClick={() => setCollapsed(!collapse)}
+          className="m-3"
         >
           Skills {collapse ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
         </h3>
         <div className="collapse show" id="collapseExample">
-          <ul className="container text-center" style={{ listStyle: "none" }}>
+          <ul className="container text-start" style={{ listStyle: "none" }}>
             <div className="row">
               <div className="col">
                 <li>C#</li>
                 <li>.NET Core</li>
+              </div>
+              <div className="col">
                 <li>SQL</li>
                 <li>PostgreSQL</li>
                 <li>Oracle</li>
