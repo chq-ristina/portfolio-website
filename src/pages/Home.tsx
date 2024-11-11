@@ -1,12 +1,10 @@
-import { useState } from "react";
 import headshot from "../assets/headshot.jpg";
-import { MdKeyboardArrowDown } from "react-icons/md";
-import { MdKeyboardArrowUp } from "react-icons/md";
+import { Skills } from "../components/Skills";
+
 import { AiFillLinkedin } from "react-icons/ai";
 import { AiOutlineGithub } from "react-icons/ai";
 
 export function Home() {
-  const [collapse, setCollapsed] = useState(true);
   return (
     <div className="m-6">
       <div className="d-flex justify-content-center align-items-center">
@@ -27,7 +25,7 @@ export function Home() {
             </a>
           </h3>
         </div>
-        <span className="text-center text-wrap mx-6">
+        <span className="text-center text-wrap mx-6 w-75">
           I'm a fullstack developer based out of NYC with 1 YOE. I have
           experience using C# and .NET Core for backend development and React,
           JavaScript, and TypeScript for the frontend. Additionally, I am
@@ -35,44 +33,7 @@ export function Home() {
           development.
         </span>
       </div>
-      <div className="component my-6">
-        <h3
-          data-bs-toggle="collapse"
-          role="button"
-          data-bs-target="#collapseExample"
-          aria-expanded="false"
-          aria-controls="collapseExample"
-          onClick={() => setCollapsed(!collapse)}
-          className="m-3"
-        >
-          Skills {collapse ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
-        </h3>
-        <div className="collapse show" id="collapseExample">
-          <ul className="container text-start" style={{ listStyle: "none" }}>
-            <div className="row">
-              <div className="col">
-                <li>C#</li>
-                <li>.NET Core</li>
-              </div>
-              <div className="col">
-                <li>SQL</li>
-                <li>PostgreSQL</li>
-                <li>Oracle</li>
-              </div>
-              <div className="col">
-                <li>React</li>
-                <li>JavaScript</li>
-                <li>Typescript</li>
-              </div>
-              <div className="col">
-                <li>React Native</li>
-                <li>Expo</li>
-                <li>Redux</li>
-              </div>
-            </div>
-          </ul>
-        </div>
-      </div>
+      <Skills />
     </div>
   );
 }
