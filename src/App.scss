@@ -1,0 +1,21 @@
+$base-color: #1a04e0;
+$alt-base-color: #02cfac;
+$text-color: #61dafb;
+
+body{
+    background-color: $alt-base-color;
+    color: #fff;
+    margin: 16px;
+}
+
+.headshot{
+    height: 15%;
+    width: 15%;
+    border-radius: 100%;
+}
+
+.component{
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
