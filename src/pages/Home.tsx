@@ -1,4 +1,5 @@
 import headshot from "../assets/headshot.jpg";
+import { Projects } from "../components/Projects";
 import { Skills } from "../components/Skills";
 
 import { AiFillLinkedin } from "react-icons/ai";
@@ -34,6 +35,7 @@ export function Home() {
         </span>
       </div>
       <Skills />
+      <Projects/>
     </div>
   );
 }
