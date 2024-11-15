@@ -3,6 +3,8 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { IProjectDescription, ProjectDescription } from "./ProjectDescription";
 
+import { eScribeDesc } from "../data/ProjectDescriptions";
+
 import mario from "../assets/SuperMarioOdysseyTitleScreen.jpg";
 
 export function Projects() {
@@ -60,11 +62,11 @@ export function Projects() {
       </h3>
       <div className="collapse show" id="2023Collapse">
         <ProjectDescription
-          projectName={eScribe.projectName}
-          projectDescription={eScribe.projectDescription}
-          url={eScribe.url}
-          technologies={eScribe.technologies}
-          images={eScribe.images}
+          projectName={eScribeDesc.projectName}
+          projectDescription={eScribeDesc.projectDescription}
+          url={eScribeDesc.url}
+          technologies={eScribeDesc.technologies}
+          images={eScribeDesc.images}
         />
       </div>
     </div>

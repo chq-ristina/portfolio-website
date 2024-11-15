@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { MdKeyboardArrowUp } from "react-icons/md";
+import test from "../assets/SuperMarioOdysseyTitleScreen.jpg";
 
 export interface ImgCard {
   src: string;
@@ -19,6 +20,8 @@ export interface IProjectDescription {
 
 export function ProjectDescription(props: IProjectDescription) {
   const [collapse, setCollapse] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
   return (
     <div className="m-3">
       <h4
@@ -54,18 +57,77 @@ export function ProjectDescription(props: IProjectDescription) {
           </div>
         </div>
 
-        <div>
-          {props.images.map(({ src, description }) => (
+        <div className="d-flex justify-content-center align-items-center my-4">
+          <div id="carouselExampleCaptions" className="carousel carousel-dark slide w-75" data-bs-ride="carousel">
+            <div className="carousel-indicators">
+              {props.images.map((val, index) => (
+                <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to={index}
+                className={activeSlide(index)}
+                aria-current={index === 0}
+                aria-label={`Slide ${index}`}
+                />
+              ))}
+            </div>
+            <div className="carousel-inner">
+              {props.images.map(({src, description}, index) => (
+                <div className={`carousel-item ${activeSlide(index)} `}>
+                <img src={src} className="d-block w-100" alt="..." />
+                <div className="carousel-caption d-none d-md-block">
+                  {/* <h5>{index} slide label</h5> */}
+                  <p>
+                    {description}
+                  </p>
+                </div>
+              </div>
+              ))}
+            </div>
+            <button
+              className="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev"
+              // onClick={() => updateActiveIndex(false)}
+            >
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button
+              className="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next"
+              // onClick={() => updateActiveIndex()}
+            >
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        {/* <div>
+          {props.images.map(({ src, description }, index) => (
             <div className="card w-25 my-3">
               <img src={src} className="card-img-top" />
               <div className="card-body">
-                {/* <h5 className="card-title">Card title</h5> */}
                 <p className="card-text">{description}</p>
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
+
+  function activeSlide(index: number): string{
+    return index === activeIndex ? "active" : "";
+  }
+
 }
