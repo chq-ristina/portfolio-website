@@ -1,6 +1,7 @@
 $base-color: #9d95e8;
 $base-color-2: #c4c0eb;
 $text-color: #fcfcf0;
+$text-color-dark: #000;
 
 body{
     background: linear-gradient($base-color-2 0%, $base-color 100%);
@@ -24,6 +25,16 @@ a {
 .proj-desc-img{
     height: 25%;
     width: 25%;
+}
+
+.proj-desc-desc{
+    font-size: 1.20rem;
+    font-weight: 500;
+    // color: #000;
+}
+
+.proj-desc-tech{
+    font-size: 1rem;
 }
 
 .component{

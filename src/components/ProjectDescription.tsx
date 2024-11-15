@@ -11,7 +11,7 @@ export interface ImgCard {
 export interface IProjectDescription {
   projectName: string;
   projectDescription: string;
-  url: string | null;
+  url?: string;
   technologies: string[];
   images: ImgCard[];
 }
@@ -46,10 +46,10 @@ export function ProjectDescription(props: IProjectDescription) {
               <span className="fs-4">{props.url}</span>
             </a>
           )}
-          <span>{props.projectDescription}</span>
+          <span className="proj-desc-desc">{props.projectDescription}</span>
           <div>
             {props.technologies.map((technology, idx) => (
-              <span className="fst-italic">
+              <span className="fst-italic proj-desc-tech">
                 {technology}
                 {idx !== props.technologies.length - 1 && ", "}{" "}
               </span>
@@ -58,12 +58,12 @@ export function ProjectDescription(props: IProjectDescription) {
         </div>
 
         <div className="d-flex justify-content-center align-items-center my-4">
-          <div id="carouselExampleCaptions" className="carousel carousel-dark slide w-75" data-bs-ride="carousel">
+          <div id="imgCarousel" className="carousel carousel-dark slide w-75" data-bs-ride="carousel">
             <div className="carousel-indicators">
               {props.images.map((val, index) => (
                 <button
                 type="button"
-                data-bs-target="#carouselExampleCaptions"
+                data-bs-target="#imgCarousel"
                 data-bs-slide-to={index}
                 className={activeSlide(index)}
                 aria-current={index === 0}
@@ -87,9 +87,8 @@ export function ProjectDescription(props: IProjectDescription) {
             <button
               className="carousel-control-prev"
               type="button"
-              data-bs-target="#carouselExampleCaptions"
+              data-bs-target="#imgCarousel"
               data-bs-slide="prev"
-              // onClick={() => updateActiveIndex(false)}
             >
               <span
                 className="carousel-control-prev-icon"
@@ -100,9 +99,8 @@ export function ProjectDescription(props: IProjectDescription) {
             <button
               className="carousel-control-next"
               type="button"
-              data-bs-target="#carouselExampleCaptions"
+              data-bs-target="#imgCarousel"
               data-bs-slide="next"
-              // onClick={() => updateActiveIndex()}
             >
               <span
                 className="carousel-control-next-icon"
@@ -112,16 +110,6 @@ export function ProjectDescription(props: IProjectDescription) {
             </button>
           </div>
         </div>
-        {/* <div>
-          {props.images.map(({ src, description }, index) => (
-            <div className="card w-25 my-3">
-              <img src={src} className="card-img-top" />
-              <div className="card-body">
-                <p className="card-text">{description}</p>
-              </div>
-            </div>
-          ))}
-        </div> */}
       </div>
     </div>
   );

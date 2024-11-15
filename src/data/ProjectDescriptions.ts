@@ -11,7 +11,7 @@ import escribe7 from "../assets/escribe/ModifiedByTestUser.png";
 export const eScribeDesc: IProjectDescription = {
     projectName: "E-scribe",
     projectDescription: "A collaborative notes app designed to allow users to create and share their notes with others. React and JavaScript were used to create the front end, Java and Spring Boot for the REST API, and deployed using AWS",
-    url: "http://e-scribe.s3-website.us-east-2.amazonaws.com/",
+    // url: "http://e-scribe.s3-website.us-east-2.amazonaws.com/",
     technologies: [
       "Java",
       "Spring Boot",
