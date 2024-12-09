@@ -3,7 +3,7 @@ $base-color-2: #c4c0eb;
 $text-color: #fcfcf0;
 $text-color-dark: #000;
 
-body{
+body {
     background: linear-gradient($base-color-2 0%, $base-color 100%);
     // background-repeat: no-repeat;
     color: $text-color;
@@ -12,33 +12,42 @@ body{
 }
 
 a {
-    color: inherit; /* blue colors for links too */
-    text-decoration: inherit; /* no underline */
-  }
+    color: inherit;
+    /* blue colors for links too */
+    text-decoration: inherit;
+    /* no underline */
+}
 
-.headshot{
+.headshot {
     height: 15%;
     width: 15%;
     border-radius: 100%;
 }
 
-.proj-desc-img{
+.proj-desc-img {
     height: 25%;
     width: 25%;
 }
 
-.proj-desc-desc{
+.proj-desc-desc {
     font-size: 1.20rem;
     font-weight: 500;
     // color: #000;
 }
 
-.proj-desc-tech{
+.proj-desc-tech {
     font-size: 1rem;
 }
 
-.component{
+.component {
     border-top: 1px solid $text-color;
     border-bottom: 1px solid $text-color;
 }
 
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    .carousel-caption {
+        p {
+            background: rgba(255, 255, 255, 0.6)
+        }
+    }
+}

@@ -6,6 +6,16 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { AiOutlineGithub } from "react-icons/ai";
 
 export function Home() {
+  const startDate: Date = new Date('2023-09-14');
+  const currentDate : Date = new Date();
+
+  const diffInMs: number = Math.abs(startDate.getTime() - currentDate.getTime());
+  const millisecondsInDay: number = 1000 * 60 * 60 * 24;
+  const diffInDays: number = Math.floor(diffInMs / millisecondsInDay);
+
+  const yoe: number = Math.floor(diffInDays / 365);
+
+
   return (
     <div className="m-6">
       <div className="d-flex justify-content-center align-items-center">
@@ -27,15 +37,16 @@ export function Home() {
           </h3>
         </div>
         <span className="text-center text-wrap mx-6 w-75">
-          I'm a fullstack developer based out of NYC with 1 YOE. I have
+          I'm a fullstack developer based out of NYC with about {yoe} YOE. I have
           experience using C# and .NET Core for backend development and React,
-          JavaScript, and TypeScript for the frontend. Additionally, I am
-          familiar with SQL and have used PostgreSQL and Oracle for database
-          development.
+          JavaScript, and TypeScript for the frontend. I also have experience
+          developing mobile applications using Expo and React Native.
+          Additionally, I am familiar with SQL and used PostgreSQL and
+          Oracle for database development.
         </span>
       </div>
       <Skills />
-      <Projects/>
+      <Projects />
     </div>
   );
 }

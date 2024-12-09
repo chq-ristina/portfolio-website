@@ -58,30 +58,31 @@ export function ProjectDescription(props: IProjectDescription) {
         </div>
 
         <div className="d-flex justify-content-center align-items-center my-4">
-          <div id="imgCarousel" className="carousel carousel-dark slide w-75" data-bs-ride="carousel">
+          <div
+            id="imgCarousel"
+            className="carousel carousel-dark slide w-75"
+            data-bs-ride="carousel"
+          >
             <div className="carousel-indicators">
               {props.images.map((val, index) => (
                 <button
-                type="button"
-                data-bs-target="#imgCarousel"
-                data-bs-slide-to={index}
-                className={activeSlide(index)}
-                aria-current={index === 0}
-                aria-label={`Slide ${index}`}
+                  type="button"
+                  data-bs-target="#imgCarousel"
+                  data-bs-slide-to={index}
+                  className={activeSlide(index)}
+                  aria-current={index === 0}
+                  aria-label={`Slide ${index}`}
                 />
               ))}
             </div>
             <div className="carousel-inner">
-              {props.images.map(({src, description}, index) => (
+              {props.images.map(({ src, description }, index) => (
                 <div className={`carousel-item ${activeSlide(index)} `}>
-                <img src={src} className="d-block w-100" alt="..." />
-                <div className="carousel-caption d-none d-md-block">
-                  {/* <h5>{index} slide label</h5> */}
-                  <p>
-                    {description}
-                  </p>
+                  <img src={src} className="d-block w-100" alt="..." />
+                  <div className="carousel-caption d-none d-md-block">
+                    <p>{description}</p>
+                  </div>
                 </div>
-              </div>
               ))}
             </div>
             <button
@@ -114,8 +115,7 @@ export function ProjectDescription(props: IProjectDescription) {
     </div>
   );
 
-  function activeSlide(index: number): string{
+  function activeSlide(index: number): string {
     return index === activeIndex ? "active" : "";
   }
-
 }
