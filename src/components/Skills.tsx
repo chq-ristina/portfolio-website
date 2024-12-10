@@ -6,7 +6,7 @@ export function Skills() {
   const [collapse, setCollapsed] = useState(true);
 
   return (
-    <div className="component my-6">
+    <div className="component-both my-6">
       <h3
         data-bs-toggle="collapse"
         role="button"

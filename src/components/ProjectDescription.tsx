@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { MdKeyboardArrowUp } from "react-icons/md";
+import { TechnologyList } from "./TechnologyList";
 
 export interface ImgCard {
   src: string;
@@ -21,7 +22,7 @@ export function ProjectDescription(props: IProjectDescription) {
 
   return (
     <div className="m-3">
-      <h4
+      <h5
         data-bs-toggle="collapse"
         role="button"
         data-bs-target={`#projectDescription-${props.projectName}`}
@@ -32,7 +33,7 @@ export function ProjectDescription(props: IProjectDescription) {
       >
         {props.projectName}{" "}
         {collapse ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
-      </h4>
+      </h5>
       <div
         className="ms-5 collapse"
         id={`projectDescription-${props.projectName}`}
@@ -43,14 +44,9 @@ export function ProjectDescription(props: IProjectDescription) {
               <span className="fs-4">{props.url}</span>
             </a>
           )}
-          <span className="proj-desc-desc">{props.projectDescription}</span>
-          <div>
-            {props.technologies.map((technology, idx) => (
-              <span className="fst-italic proj-desc-tech">
-                {technology}
-                {idx !== props.technologies.length - 1 && ", "}{" "}
-              </span>
-            ))}
+          <p>{props.projectDescription}</p>
+          <div className="mt-2">
+            <TechnologyList technologies={props.technologies}/>
           </div>
         </div>
 
