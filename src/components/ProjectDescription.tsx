@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { MdKeyboardArrowUp } from "react-icons/md";
-import test from "../assets/SuperMarioOdysseyTitleScreen.jpg";
 
 export interface ImgCard {
   src: string;
@@ -15,8 +14,6 @@ export interface IProjectDescription {
   technologies: string[];
   images: ImgCard[];
 }
-
-/*TODO: Work on Styling for the url, project description, technologies, and images */
 
 export function ProjectDescription(props: IProjectDescription) {
   const [collapse, setCollapse] = useState(false);

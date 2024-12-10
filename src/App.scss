@@ -1,12 +1,12 @@
-$base-color: #9d95e8;
-$base-color-2: #c4c0eb;
-$text-color: #fcfcf0;
-$text-color-dark: #000;
+$base-color: #6b5cf7;
+$base-color-2: #3f349e;
+$text-color: #eaeae4;
+$text-color-primary: #d9d9d7;
 
 body {
     background: linear-gradient($base-color-2 0%, $base-color 100%);
     // background-repeat: no-repeat;
-    color: $text-color;
+    color: $text-color-primary;
     min-height: 100vh;
     margin: 16px;
 }
@@ -42,6 +42,27 @@ a {
 .component {
     border-top: 1px solid $text-color;
     border-bottom: 1px solid $text-color;
+    
+    h3{
+        color: $text-color ;
+    }
+}
+
+.exp-title{
+    font-size: 1.15rem;
+}
+
+.exp-desc{
+    width: 80vw;
+}
+
+.exp{
+    width: 90vw;
+}
+
+.border-bottom{
+    border-bottom: 1px solid $text-color;
+    margin-bottom: 5px;
 }
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {

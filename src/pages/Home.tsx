@@ -1,4 +1,5 @@
 import headshot from "../assets/headshot.jpg";
+import { Experience } from "../components/Experience";
 import { Projects } from "../components/Projects";
 import { Skills } from "../components/Skills";
 
@@ -18,11 +19,11 @@ export function Home() {
 
   return (
     <div className="m-6">
-      <div className="d-flex justify-content-center align-items-center">
+      {/* <div className="d-flex justify-content-center align-items-center">
         <img src={headshot} className="headshot" alt="Headshot" />
-      </div>
+      </div> */}
       <div className="d-flex flex-column justify-content-center align-items-center mb-4">
-        <h2>Christina Phillips</h2>
+        <h1>Christina Phillips</h1>
         <div>
           <h3>
             <a
@@ -46,6 +47,7 @@ export function Home() {
         </span>
       </div>
       <Skills />
+      <Experience/>
       <Projects />
     </div>
   );
