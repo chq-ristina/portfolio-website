@@ -1,0 +1,4 @@
+export const ExperienceDescription = {
+  MTA: "Spearheaded the optimization of the process for certifiying a section of internal employees through the development of mobile and web applications and a web API that leverages a PostgreSQL database, allowing for managers and adminstrators to easily conduct certfication tests on the go. Additionally, I often assist with software maintenance procedures and investigate, resolve, and document routine software issues, often collaborating and communicating with end users to maintain and enhance legacy applications.",
+  TTD: "Optimized the identification of misconfigured advertisement deals by expanding the qualifications for when a deal is defined as misconfigured and optimizing the SQL queries responsible for identifying deals that have become misconfigured, thus allowing clients to be notified and given the chance to amend their deals much sooner.",
+};
